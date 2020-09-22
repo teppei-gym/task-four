@@ -1,0 +1,15 @@
+{
+  "name": "task-four",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:teppei-gym/task-four.git",
+  "author": "teppei <yamamutaisou@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn run webpack --mode development"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
