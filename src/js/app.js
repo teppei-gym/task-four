@@ -20,20 +20,18 @@ const questionForm = {
 //　初期描画
 init(title, sentence, startBtn, homeBtn);
 
-startBtn.addEventListener('click', function () {
+startBtn.addEventListener('click', async function () {
   startBtn.style.display = 'none';
   title.textContent = '取得中';
   sentence.textContent = '少々お待ちください'
-  fetch(url).then(function (response) {
-    if (!response.ok) {
-      throw new Error();
-    }
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error();
+  }
+  const data = await response.json();
 
-    return response.json();
-  }).then(function (data) {
-    question = new Question(data.results);
-    output(questionForm, question);
-  });
+  question = new Question(data.results);
+  output(questionForm, question);
 });
 
 homeBtn.addEventListener('click', function () {
